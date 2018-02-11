@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import {GrowlModule} from 'primeng/growl';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    GrowlModule
   ],
   providers: [],
   bootstrap: [AppComponent]
