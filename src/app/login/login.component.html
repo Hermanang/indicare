@@ -1,0 +1,28 @@
+<body>
+    <div class="container cadre">
+      <h1>Africare</h1>
+      <form class="example-form" (ngSubmit)="onSubmit()">
+  
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" [formControl]="emailFormControl"
+                 [errorStateMatcher]="matcher">
+          <!--<mat-hint>Corrècte</mat-hint>-->
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            l'Email est <strong>requis</strong>
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Saisir votre mot de passe" [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>
+        
+        <div class="button-row">
+          <button mat-raised-button color="warn">Connexion</button>
+        </div>
+      </form>
+    </div>
+  </body>

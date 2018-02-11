@@ -1,18 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
 
-import {GrowlModule} from 'primeng/growl';
+import { LoginComponent } from './login/login.component';
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatInputModule, MatIconModule, MatButtonModule } from '@angular/material';
+
+
+import { AppRoutesModule } from './app-routes.module';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
+    MatInputModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
-    GrowlModule
+    AppRoutesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

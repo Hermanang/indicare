@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import {Message} from 'primeng/components/common/api';
-import {MessageService} from 'primeng/components/common/messageservice'
+import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  template: '<router-outlet></router-outlet>',
   providers: [MessageService]
 })
 export class AppComponent {
