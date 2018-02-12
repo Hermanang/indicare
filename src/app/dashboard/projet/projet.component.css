@@ -1,0 +1,22 @@
+.gb{
+    text-align: end;
+    font-size: 10px;
+    color: rgb(155, 153, 153);
+    font-family: fantasy;
+    
+}
+
+.table{
+    max-width: 1200px;
+    min-width: 300px;
+    width: inherit;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+button{
+	outline: none;
+}
+
+.container{
+    padding-left: 0;
+}

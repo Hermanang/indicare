@@ -8,8 +8,12 @@ img{
 }
 
 .block{
-	position: absolute;
-	margin-top: 6%;
+	float: left;
+	margin-bottom: 20px;
+	margin-top: 11%;
+	background-color:rgba(236, 114, 43, 0.3) ;
+	padding: 1px;
+	width: 100%;
 }
 .container-img{
 	margin-right: auto;

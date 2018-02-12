@@ -9,8 +9,13 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 
 import {MatMenuModule} from '@angular/material/menu';
 
-import { AsideComponent } from '../navigator/aside/aside.component';
-import { SectionComponent } from '../navigator/section/section.component';
+import { AsideComponent } from '../navigator/aside.component';
+import { SectionComponent } from '../navigator/section.component';
+
+import { ProjetTitleComponent } from './projet/projet-title.component';
+import { ProjetComponent } from './projet/projet.component';
+import { ListZonesComponent } from './projet/list-zones.component';
+
 
 @NgModule({
   imports: [
@@ -24,7 +29,10 @@ import { SectionComponent } from '../navigator/section/section.component';
   declarations: [
     DashboardComponent,
     AsideComponent,
-    SectionComponent
+    SectionComponent,
+    ProjetTitleComponent,
+    ProjetComponent,
+    ListZonesComponent
   ]
 })
 export class DashboardModule { }

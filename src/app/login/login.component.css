@@ -15,7 +15,9 @@
     background-color: white;
     color:white;
   }*/
-
+  button{
+    outline: none;
+  }
   .button-row {
     display: flex;
     align-items: center;
