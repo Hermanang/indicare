@@ -8,9 +8,9 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule, MatIconModule, MatButtonModule } from '@angular/material';
 
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutesModule } from './app-routes.module';
-
+import {GrowlModule} from 'primeng/growl';
 
 
 @NgModule({
@@ -20,6 +20,8 @@ import { AppRoutesModule } from './app-routes.module';
   ],
   imports: [
     MatInputModule,
+    GrowlModule,
+    HttpClientModule,
     MatIconModule,
     BrowserAnimationsModule,
     MatButtonModule,
