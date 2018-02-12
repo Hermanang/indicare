@@ -49,11 +49,11 @@ export class LoginComponent implements OnInit {
           } else {
             localStorage.setItem('curentUser', JSON.stringify(data));
             this.showSuccess();
-          // this.router.navigate(['dashboard'], navigationExtras);
+            this.router.navigate(['dashboard']/*, navigationExtras*/);
           }
         },
         error => {
-          this.router.navigate(['notConnexion']);
+          // this.router.navigate(['notConnexion']);
         }
       );
     }

@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 </button>
 </div>
 <div class="button-row">
-  <button routerLink="zones" [routerLinkActive]="'active allume'" mat-button >
+  <button  mat-button >
     <mat-icon>voicemail</mat-icon>
     <span>Zones</span>
   </button>

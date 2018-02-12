@@ -22,7 +22,7 @@ const appRoutes: Routes = [
         component: ProjetComponent
       },
       {
-        path: 'zones',
+        path: 'zones/:id',
         component: ListZonesComponent
       }
     ]

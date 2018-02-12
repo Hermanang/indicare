@@ -9,8 +9,8 @@
 			</tr>
 		  </thead>
 		  <tbody>
-			<tr>
-				<th scope="row"></th>
+			<tr *ngFor="let projet of projets">
+				<th scope="row">{{projet.NOM_PROJET}}</th>
 			  <td><div class="gb">--- indicators</div></td>
 				<td>
 					<button (click)="goToIndicateurs()" mat-icon-button >
@@ -19,7 +19,7 @@
 				</td>
 				<td><div class="gb">--- zones</div></td>
 			  <td>
-					<button (click)="goToZones()" mat-icon-button >
+					<button (click)="goToZones(projet.CODE_PROJET)" mat-icon-button >
 						<mat-icon>list</mat-icon>
 					</button>
 				</td>
