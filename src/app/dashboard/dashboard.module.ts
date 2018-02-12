@@ -9,6 +9,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 
 import {MatMenuModule} from '@angular/material/menu';
 
+import { AsideComponent } from '../navigator/aside/aside.component';
+import { SectionComponent } from '../navigator/section/section.component';
+
 @NgModule({
   imports: [
     MatMenuModule,
@@ -19,7 +22,9 @@ import {MatMenuModule} from '@angular/material/menu';
     DashboardRoutingModule
   ],
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    AsideComponent,
+    SectionComponent
   ]
 })
 export class DashboardModule { }

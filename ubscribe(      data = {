@@ -1,0 +1,29 @@
+[33mcommit 3c84b7feb09740fcd889ea2fdba34b0db4e833d7[m[33m ([m[1;36mHEAD -> [m[1;32mdashboard[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Hermanang <tobnang1234@gmail.com>
+Date:   Mon Feb 12 15:19:34 2018 +0100
+
+    Le composant login a bien été implémenté, avec des styles css adapté:Complet
+
+[33mcommit 505f9111da754a22c55d247559992e764da02889[m
+Author: Hermanang <tobnang1234@gmail.com>
+Date:   Sun Feb 11 04:09:18 2018 +0100
+
+    Installation de Material design, Bootstrap réussie | Ajout de la fonctionalité(standars) loggin et du composant des routes de l'application
+
+[33mcommit 85974cb05bba8f504e0b56976569fa5d267c06e0[m
+Author: Hermanang <tobnang1234@gmail.com>
+Date:   Sun Feb 11 02:54:31 2018 +0100
+
+    Installation reusie de Primeng (Procedure d'installation normal comme dans la docs)| Application fonction sans erreur
+
+[33mcommit f3a39fb739457b451c8cb087e065dfadb3fce505[m
+Author: Hermanang <tobnang1234@gmail.com>
+Date:   Sun Feb 11 01:52:48 2018 +0100
+
+    test
+
+[33mcommit d06d1236d39a91569d650d3b09a45f07ccd513b2[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Angular CLI <angular-cli@angular.io>
+Date:   Sat Feb 10 18:58:34 2018 +0100
+
+    chore: initial commit from @angular/cli

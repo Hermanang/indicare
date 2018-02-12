@@ -11,6 +11,7 @@ import { MatInputModule, MatIconModule, MatButtonModule } from '@angular/materia
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutesModule } from './app-routes.module';
 import {GrowlModule} from 'primeng/growl';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {GrowlModule} from 'primeng/growl';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
+    DashboardModule,
     AppRoutesModule
   ],
   providers: [],

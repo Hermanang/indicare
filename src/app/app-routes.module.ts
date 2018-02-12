@@ -7,8 +7,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: LoginComponent},
+  {
+    path: 'dashboard',
+    loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
+    data: { preload: true }
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  }
 ];
 @NgModule({
   imports: [

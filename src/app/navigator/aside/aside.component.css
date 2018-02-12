@@ -1,0 +1,25 @@
+button{
+	text-align: left;
+	width: 255px;
+	height: 60px;
+	outline: none;
+}
+
+button:hover{
+	background-color: #ff6666;
+	color: white;
+	font-family: Georgia, serif;
+	transition: all 0.5s ease;
+
+}
+mat-icon{
+	margin-right: 15px;
+}
+
+.allume{
+	background-color: #ff6666;
+	color: white;
+	font-family: Georgia, serif;
+	transition: all 0.5s ease;
+
+}
