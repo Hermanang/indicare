@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
           }
         },
         error => {
+          this.showError();
           // this.router.navigate(['notConnexion']);
         }
       );
