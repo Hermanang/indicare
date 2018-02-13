@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard.component';
 import { ProjetTitleComponent } from './projet/projet-title.component';
 import { ProjetComponent } from './projet/projet.component';
 import { ListZonesComponent } from './projet/list-zones.component';
+import { IndicateurComponent } from './projet/indicateur.component';
+import { IndicateurCollecteComponent } from './projet/indi-collecte.component';
 
 const appRoutes: Routes = [
   {
@@ -24,6 +26,14 @@ const appRoutes: Routes = [
       {
         path: 'zones/:id',
         component: ListZonesComponent
+      },
+      {
+        path: 'indicateurs/:id',
+        component: IndicateurComponent
+      },
+      {
+        path: 'indi_collecte/:id',
+        component: IndicateurCollecteComponent
       }
     ]
   }

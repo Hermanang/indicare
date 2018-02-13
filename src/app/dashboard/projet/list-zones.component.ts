@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { HttpClient } from '@angular/common/http';
 
@@ -12,10 +11,10 @@ interface ZONE {
   selector: 'app-zones',
   template:  `
   <div class="container">
-  <table class="table table-hover table-dark">
+  <table class="table table-striped table-hover">
     <thead>
     <tr>
-      <th scope="col">Project name</th>
+      <th scope="col">Zone name</th>
       <th scope="col"></th>
     </tr>
     </thead>
@@ -33,20 +32,41 @@ interface ZONE {
 </table>
 </div>
 
-  `
+  `,
+  styles: [`
+    .gb{
+      text-align: end;
+      font-size: 10px;
+      color: rgb(155, 153, 153);
+      font-family: fantasy;
+    },
+    .table{
+      max-width: 1200px;
+      min-width: 300px;
+      width: inherit;
+      font-family: "Times New Roman", Georgia, Serif;
+    }
+    button{
+      outline: none;
+    }
+  `]
 })
 
 export class ListZonesComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   zones: ZONE[];
-
+  id: any;
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id');
 
-    this.http.get<ZONE[]>('http://localhost/api/getZones.php?code=' + id)
+    this.http.get<ZONE[]>('http://localhost/api/getZones.php?code=' + this.id)
     .subscribe(data => {this.zones = data; } );
+  }
+
+  goToIndicateurs() {
+    this.router.navigate(['dashboard/indi_collecte', this.id]);
   }
 
 }

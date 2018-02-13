@@ -15,7 +15,8 @@ import { SectionComponent } from '../navigator/section.component';
 import { ProjetTitleComponent } from './projet/projet-title.component';
 import { ProjetComponent } from './projet/projet.component';
 import { ListZonesComponent } from './projet/list-zones.component';
-
+import { IndicateurComponent } from './projet/indicateur.component';
+import { IndicateurCollecteComponent } from './projet/indi-collecte.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,9 @@ import { ListZonesComponent } from './projet/list-zones.component';
     SectionComponent,
     ProjetTitleComponent,
     ProjetComponent,
-    ListZonesComponent
+    IndicateurComponent,
+    ListZonesComponent,
+    IndicateurCollecteComponent
   ]
 })
 export class DashboardModule { }

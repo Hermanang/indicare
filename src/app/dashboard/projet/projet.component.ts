@@ -22,8 +22,8 @@ export class ProjetComponent implements OnInit {
   goToZones(id) {
     this.router.navigate(['dashboard/zones', id]);
   }
-  goToIndicateurs() {
-    this.router.navigate(['dashboard/indicateurs']);
+  goToIndicateurs(id) {
+    this.router.navigate(['dashboard/indicateurs', id]);
   }
 
 }
