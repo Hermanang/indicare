@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router, NavigationExtras } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { HttpClient } from '@angular/common/http';
 
@@ -23,7 +23,7 @@ interface ZONE {
       <th scope="row">{{zone.NOM_ZONE}}</th>
       <td><div class="gb">--- indicators</div></td>
       <td>
-        <button (click)="goToIndicateurs()" mat-icon-button >
+        <button (click)="goToIndicateurs(zone.NOM_ZONE)" mat-icon-button >
           <mat-icon>sort</mat-icon>
         </button>
       </td>
@@ -59,14 +59,21 @@ export class ListZonesComponent implements OnInit {
   zones: ZONE[];
   id: any;
   ngOnInit(): void {
+    // paramMap : parametre de la methode 'navigate(['nom', id])'
     this.id = this.route.snapshot.paramMap.get('id');
 
     this.http.get<ZONE[]>('http://localhost/api/getZones.php?code=' + this.id)
     .subscribe(data => {this.zones = data; } );
   }
 
-  goToIndicateurs() {
-    this.router.navigate(['dashboard/indi_collecte', this.id]);
+  goToIndicateurs(nomZone) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        'zone': nomZone,
+        'code_p': this.id
+      }
+    };
+    this.router.navigate(['dashboard/indi_collecte'], navigationExtras);
   }
 
 }
