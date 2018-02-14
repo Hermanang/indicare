@@ -12,13 +12,13 @@ import { Component, OnInit } from '@angular/core';
 <div class="button-row">
   <button  mat-button >
     <mat-icon>voicemail</mat-icon>
-    <span>Zones</span>
+    <span>Graphiques</span>
   </button>
 </div>
 <div class="button-row">
   <button routerLink="indicateurs" [routerLinkActive]="'active allume'" mat-button >
     <mat-icon>notifications_off</mat-icon>
-    <span>Disable alerts</span>
+    <span>Collectes</span>
   </button>
 </div>
   `,

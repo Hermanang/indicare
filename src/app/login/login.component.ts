@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 
 import { Router, NavigationExtras } from '@angular/router';
-// import { Observable } from 'rxjs/Observable';
-// import { isNull } from 'util';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { isNull } from 'util';
 import { HttpClient } from '@angular/common/http';

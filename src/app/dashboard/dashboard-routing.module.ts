@@ -32,7 +32,7 @@ const appRoutes: Routes = [
         component: IndicateurComponent
       },
       {
-        path: 'indi_collecte/:id',
+        path: 'indi_collecte',
         component: IndicateurCollecteComponent
       }
     ]

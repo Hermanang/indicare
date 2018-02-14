@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
-import { MatIconModule, MatButtonModule } from '@angular/material';
+import { MatIconModule, MatButtonModule, MatFormFieldModule, MatCardModule } from '@angular/material';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
 import {MatMenuModule} from '@angular/material/menu';
@@ -18,12 +18,25 @@ import { ListZonesComponent } from './projet/list-zones.component';
 import { IndicateurComponent } from './projet/indicateur.component';
 import { IndicateurCollecteComponent } from './projet/indi-collecte.component';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatInputModule } from '@angular/material';
+
+import {MatExpansionModule} from '@angular/material/expansion';
+import {GrowlModule} from 'primeng/growl';
+
 @NgModule({
   imports: [
     MatMenuModule,
     CommonModule,
+    MatInputModule,
     MatIconModule,
+    MatCardModule,
     MatButtonModule,
+    ReactiveFormsModule,
+    GrowlModule,
+    FormsModule,
+    MatExpansionModule,
+    MatFormFieldModule,
     MatTooltipModule,
     DashboardRoutingModule
   ],
