@@ -30,11 +30,11 @@ interface INDICATEUR {
     </mat-expansion-panel-header>
 
     <mat-form-field>
-    <input matInput placeholder="Renseigner indicateur" type="number" class="example-right-align">
+    <input matInput [formControl]="collecte" placeholder="Renseigner indicateur" type="number" class="example-right-align">
     <span matPrefix>#</span>
     </mat-form-field>
 
-    <button (click)="showSuccess()" mat-raised-button color="warn">
+    <button (click)="submit()" mat-raised-button color="warn">
       <mat-icon>done</mat-icon>
     </button>
 
@@ -63,26 +63,6 @@ interface INDICATEUR {
   `]
 })
 
-/*<div class="container">
-  <h2></h2>
-  <table class="table table-striped table-hover">
-    <thead>
-    <tr>
-      <th scope="col">Indicateur name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let indicateur of indicateurs">
-      <td scope="row">{{indicateur.NOM_INDICATEUR}}</td>
-      <td>
-        <button (click)="goToIndicateurs()" mat-icon-button >
-          <mat-icon>sort</mat-icon>
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>*/
 export class IndicateurCollecteComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private messageService: MessageService) { }
@@ -90,9 +70,10 @@ export class IndicateurCollecteComponent implements OnInit {
 
   indicateurs: INDICATEUR[];
   nom_zone: any;
-  passwordFormControl = new FormControl('', [
+  collecte = new FormControl('', [
     Validators.required
   ]);
+
   msgs: Message[] = [];
   ngOnInit(): void {
       // queryParams : parametre de la methode 'navigate(['nom'], navigationExtra ou queryParams)'
@@ -101,6 +82,18 @@ export class IndicateurCollecteComponent implements OnInit {
 
     this.http.get<INDICATEUR[]>('http://localhost/api/getIndicateur.php?code=' + id)
     .subscribe(data => {this.indicateurs = data; } );
+  }
+
+  submit(): void {
+    this.collecte.reset();
+
+    this.http.post('http://localhost/api/scanIndi.php', {})
+    .subscribe(
+      data => console.log(data),
+      err => console.log(err)
+    );
+
+    this.showSuccess();
   }
 
   showSuccess() {
