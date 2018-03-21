@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 interface Projet {
@@ -23,7 +23,13 @@ export class ProjetComponent implements OnInit {
     this.router.navigate(['dashboard/zones', id]);
   }
   goToIndicateurs(id) {
-    this.router.navigate(['dashboard/indicateurs', id]);
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        //'zone': nomZone,
+        'code_p': id
+      }
+    };
+    this.router.navigate(['dashboard/indi_collecte'], navigationExtras);
   }
 
 }

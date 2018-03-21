@@ -23,6 +23,8 @@ import { MatInputModule } from '@angular/material';
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import {GrowlModule} from 'primeng/growl';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -30,8 +32,10 @@ import {GrowlModule} from 'primeng/growl';
     CommonModule,
     MatInputModule,
     MatIconModule,
+    MatPaginatorModule,
     MatCardModule,
     MatButtonModule,
+    MatTableModule,
     ReactiveFormsModule,
     GrowlModule,
     FormsModule,
