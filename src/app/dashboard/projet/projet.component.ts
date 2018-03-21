@@ -23,13 +23,13 @@ export class ProjetComponent implements OnInit {
     this.router.navigate(['dashboard/zones', id]);
   }
   goToIndicateurs(id) {
-    const navigationExtras: NavigationExtras = {
+    /*const navigationExtras: NavigationExtras = {
       queryParams: {
-        //'zone': nomZone,
+        'zone': nomZone,
         'code_p': id
       }
-    };
-    this.router.navigate(['dashboard/indi_collecte'], navigationExtras);
+    };*/
+    this.router.navigate(['dashboard/indicateurs', id]);
   }
 
 }

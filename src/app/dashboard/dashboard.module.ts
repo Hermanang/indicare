@@ -25,10 +25,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {GrowlModule} from 'primeng/growl';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   imports: [
     MatMenuModule,
+    MatListModule,
     CommonModule,
     MatInputModule,
     MatIconModule,

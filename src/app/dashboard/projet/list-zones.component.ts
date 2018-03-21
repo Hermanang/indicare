@@ -11,44 +11,19 @@ interface ZONE {
   selector: 'app-zones',
   template:  `
   <div class="container">
-  <table class="table table-striped table-hover">
-    <thead>
-    <tr>
-      <th scope="col">Zone name</th>
-      <th scope="col"></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let zone of zones">
-      <th scope="row">{{zone.NOM_ZONE}}</th>
-      <td><div class="gb">--- indicators</div></td>
-      <td>
-        <button (click)="goToIndicateurs(zone.NOM_ZONE)" mat-icon-button >
-          <mat-icon>sort</mat-icon>
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <mat-selection-list #shoes>
+      <mat-list-option *ngFor="let zone of zones" (click)="goToIndicateurs(zone.NOM_ZONE)">
+        {{zone.NOM_ZONE}}
+      </mat-list-option>
+    </mat-selection-list>
 </div>
 
   `,
   styles: [`
-    .gb{
-      text-align: end;
-      font-size: 10px;
-      color: rgb(155, 153, 153);
-      font-family: fantasy;
-    },
-    .table{
-      max-width: 1200px;
-      min-width: 300px;
-      width: inherit;
-      font-family: "Times New Roman", Georgia, Serif;
-    }
-    button{
-      outline: none;
-    }
+  mat-selection-list{
+    width:1000px;
+    min-width: 40px;
+  }
   `]
 })
 
