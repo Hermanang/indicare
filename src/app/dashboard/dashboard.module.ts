@@ -26,10 +26,14 @@ import {GrowlModule} from 'primeng/growl';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatListModule} from '@angular/material/list';
+import {ChartModule} from 'primeng/chart';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   imports: [
     MatMenuModule,
+    MatTabsModule,
+    ChartModule,
     MatListModule,
     CommonModule,
     MatInputModule,

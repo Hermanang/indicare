@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import 'rxjs/add/operator/switchMap';
+import { ActivatedRoute, ParamMap, Router, NavigationExtras } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { Validators, FormControl, NgForm, FormGroupDirective } from '@angular/forms';
 import { ViewChild} from '@angular/core';
@@ -9,49 +8,48 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-zones',
-  template:  `
+  template: `
   <div class="example-header">
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-</div>
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
 
-<div class="example-container mat-elevation-z8">
+  <div class="example-container mat-elevation-z8">
 
-  <mat-table [dataSource]="dataSource" matSort>
+    <mat-table [dataSource]="dataSource" matSort>
 
-    <!-- ID Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Indicator name </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.NOM_INDICATEUR}} </mat-cell>
-    </ng-container>
+      <!-- ID Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Indicator name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.NOM_INDICATEUR}} </mat-cell>
+      </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="option">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Option </mat-header-cell>
-      <mat-cell *matCellDef="let row">
-      -- --
-        <button mat-icon-button >
-          <mat-icon>sort</mat-icon>
-        </button>
-        -- more --
-      </mat-cell>
-    </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="option">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Option </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          -- --
+          <button (click)="goToIndicateur(row.CODE_INDICATEUR)" mat-icon-button>
+            <mat-icon>sort</mat-icon>
+          </button>
+          -- more --
+        </mat-cell>
+      </ng-container>
 
-    <!-- Color Column
-    <ng-container matColumnDef="color">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
-    </ng-container>-->
+      <!-- Color Column
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+      </ng-container>-->
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;">
-    </mat-row>
-  </mat-table>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-</div>
-
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
   `,
   styles: [`
   .example-container {
@@ -81,9 +79,11 @@ export class IndicateurComponent {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  idProj: string;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
+  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {
     const id = this.route.snapshot.paramMap.get('id');
+    this.idProj = id;
 
     this.http.get<any[]>('http://localhost/api/getIndicateur.php?code=' + id)
     .subscribe(
@@ -98,6 +98,16 @@ export class IndicateurComponent {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
+  }
+
+  goToIndicateur(id) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        'indi': id,
+        'projet': this.idProj
+      }
+    };
+    this.router.navigate(['dashboard/indi_collecte'], navigationExtras);
   }
 
 }
