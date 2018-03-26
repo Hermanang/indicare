@@ -9,6 +9,7 @@ import { ProjetComponent } from './projet/projet.component';
 import { ListZonesComponent } from './projet/list-zones.component';
 import { IndicateurComponent } from './projet/indicateur.component';
 import { IndicateurCollecteComponent } from './projet/indi-collecte.component';
+import { EtatAnnuelCollecteComponent } from './projet/etat-annuel.component';
 
 const appRoutes: Routes = [
   {
@@ -34,6 +35,10 @@ const appRoutes: Routes = [
       {
         path: 'indi_collecte',
         component: IndicateurCollecteComponent
+      },
+      {
+        path: 'etat_annuel',
+        component: EtatAnnuelCollecteComponent
       }
     ]
   }

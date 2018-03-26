@@ -28,6 +28,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatListModule} from '@angular/material/list';
 import {ChartModule} from 'primeng/chart';
 import {MatTabsModule} from '@angular/material/tabs';
+import { EtatAnnuelCollecteComponent } from './projet/etat-annuel.component';
+
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { ExcelExportModule  } from '@progress/kendo-angular-excel-export';
+import { GridModule, ExcelModule  } from '@progress/kendo-angular-grid';
+
 
 @NgModule({
   imports: [
@@ -48,7 +54,11 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatExpansionModule,
     MatFormFieldModule,
     MatTooltipModule,
-    DashboardRoutingModule
+    ExcelModule,
+    DashboardRoutingModule,
+    ButtonsModule,
+    ExcelExportModule,
+    GridModule
   ],
   declarations: [
     DashboardComponent,
@@ -58,7 +68,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     ProjetComponent,
     IndicateurComponent,
     ListZonesComponent,
-    IndicateurCollecteComponent
+    IndicateurCollecteComponent,
+    EtatAnnuelCollecteComponent
   ]
 })
 export class DashboardModule { }

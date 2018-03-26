@@ -31,6 +31,9 @@ export class ProjetComponent implements OnInit {
     };*/
     this.router.navigate(['dashboard/indicateurs', id]);
   }
+  goToEtat() {
+    this.router.navigate(['dashboard/etat_annuel']);
+  }
 
 }
 

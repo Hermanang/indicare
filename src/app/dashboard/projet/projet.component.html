@@ -1,21 +1,21 @@
- 
+
 <div class="row">
 	   <div *ngFor="let projet of projets" class="col-lg-4 col-md-6">
 
 						<!--Card-->
 						<div class="card card-cascade wider">
-				
+
 								<!--Card image-->
 								<div class="view gradient-card-header peach-gradient">
 										<h2 class="h2-responsive mb-2">{{projet.NOM_PROJET}}</h2>
 										<p class=""><i class="fa fa-calendar"></i> 26.07.2017</p>
-				
+
 								</div>
 								<!--/Card image-->
-				
+
 								<!--Card content-->
 								<div class="card-body text-center card pricing-card">
-				
+
 										<p class="card-text mr-2 ml-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi
 												sunt, quod quibusdam dignissimos neque rem nihil ratione est placeat vel, natus non quos laudantium
 												veritatis sequi.Ut enim ad minima veniam, quis nostrum.</p>
@@ -34,16 +34,16 @@
 												</li>
 											</ul>
 										</div>
-										<button class="btn btn-default waves-light " mat-button>Etat annuel
+										<button class="btn btn-default waves-light" (click)="goToEtat()" mat-button>Etat annuel
 												<i class="fa fa-chevron-right"></i>
 										</button>
 								</div>
 								<!--/.Card content-->
-				
+
 						</div>
 						<!--/.Card-->
 		 </div>
 
-		
-		
+
+
 </div>

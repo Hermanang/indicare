@@ -12,7 +12,7 @@ import { skipUntil } from 'rxjs/operators';
 import { range } from 'rxjs/observable/range';
 
 @Component({
-  selector: 'app-zones',
+  selector: 'app-collecte',
   template:  `
 <mat-card>
 <mat-card-content>
@@ -178,9 +178,9 @@ export class IndicateurCollecteComponent implements OnInit {
         this.dataSource.sort = this.sort;
 
          let i = 1, somme = 0, somme_deno = 0, j = 0;
-         let table [] ;
-         let trim [];
-         let deno [];
+         const table = [];
+         const trim = [];
+         const deno = [];
          data.map(({NUMERATEUR, DENOMINATEUR}) => {
           if ( i <= 3 ) {
             somme = somme + Number(NUMERATEUR);
@@ -198,10 +198,9 @@ export class IndicateurCollecteComponent implements OnInit {
           i++;
          });
 
-
-
+        const options = {year: 'numeric', month: 'long'};
         this.datas = {
-          labels: data.map(({DATE_COLLECTE}) => DATE_COLLECTE),
+          labels: data.map(({DATE_COLLECTE}) => new Date(DATE_COLLECTE).toLocaleString('en-US', options)),
           datasets: [
               {
                   label: 'Colllecte',
